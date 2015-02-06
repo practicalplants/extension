@@ -9,41 +9,8 @@ class PracticalPlants{
 		$result = '';
 		return true;
 	}
-	public static function loadResources( $out, $skin ) {
-		//echo '<pre>'; print_r($out); exit;
-		if ( true ) {
-			$out->addModules( 'ext.practicalplants.css' );
-			$out->addModules( 'ext.practicalplants.init.dom' );
-			$out->addModules( 'browserupdate' );
-			$out->addModules( 'ext.practicalplants.init' );
-			$out->addStyle( '../../../resources/fonts/crete-round/stylesheet.css', 'screen' );
-			
-			global $mediaWiki;
-			$title = $mediaWiki->getTitle()->getText();
-			switch($title){
-				case 'Practical Plants':
-				case 'Main page':
-				case 'Main Page':
-					$out->addModules('ext.practicalplants.page.main');
-					break;
-				case 'Search':
-					$out->addModules('ext.practicalplants.page.search');
-			}
-		}
 		
-		//$out->mBodytext= preg_replace('$E>$i', '', $out->mBodytext);
-		/*echo $out->mBodytext; exit;
-		echo preg_match('$<div id="article-summary">(.+)</div>$i', $out->mBodytext); exit;
-				
-		if(preg_match('$<div id="article-summary">(.+)</div>$i', $out->mBodytext, $matches)){
-			$out->mBodytext= preg_replace('$<div id="article-summary">(.+)</div>$i', '', $out->mBodytext);
-			$article_summary = $matches[0];
-			//$text = preg_replace('$(<h1 id="article-title">.+</h1>)$i','$1'+$article_summary,$text);
-		}
-		
-		*/
-		return true;
-	}
+
 	
 	public static function loginToEdit($editpage){
 	    global $wgUser;

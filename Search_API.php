@@ -1,6 +1,8 @@
 <?php
 
-class PracticalPlants_Api extends ApiAsk{
+use \SMW\MediaWiki\Api;
+
+class PracticalPlants_Api extends \SMW\MediaWiki\Api\ApiAsk{
 
 	public function getVersion() {
 		return __CLASS__ . ': $Id$';

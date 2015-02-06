@@ -1,6 +1,7 @@
 <?php
+use SMW\MediaWiki\Api\Ask;
 
-class PracticalPlants_Api extends ApiAsk{
+class PracticalPlants_Api extends Ask{
 
 	protected function addQueryResult( SMWQueryResult $queryResult ) {
 		$serialized = $queryResult->serializeToArray();
@@ -18,9 +19,7 @@ class PracticalPlants_Api extends ApiAsk{
 				}
 			}
 		}
-		
-		//print_r( $serialized['results'] ); exit;
-		
+				
 		$output = array();
 		header("Content-type: Application/JSON");
 		foreach($serialized['results'] as $r){
