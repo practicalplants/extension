@@ -13,20 +13,16 @@ class PracticalPlants{
 
 	
 	public static function loginToEdit($editpage){
-	    global $wgUser;
+	    global $wgUser, $wgServer;
 	    if($wgUser->isAllowed( 'edit' )){
 	        return true;
 	    }
-	    //echo '<pre>';print_r($page); exit;
-	    //user doesn't have permission, so we redirect
-	    PracticalPlants_SSO_Auth::getInstance()->redirectToLogin($editpage->getArticle());
+	   header('Location: '.$wgServer.'/wiki/Special:UserLogin');
+	   exit;
 	}
 	
 	public static function outputPageParserOutput($out,$parserout){
-		//echo '<pre>';
-		
-		//print_r($out);//echo $parserout->mText;
-		//exit;
+
 	}
 	public static function parserAfterTidy($parser,$text){
 		/*if(preg_match('$<div id="article-summary">(.+)</div>$i', $text, $matches)){

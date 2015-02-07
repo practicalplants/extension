@@ -7,6 +7,10 @@ class PPFormEditAction extends SFFormEditAction{
             return;
         }
         //user doesn't have permission, so we redirect
-        PracticalPlants_SSO_Auth::getInstance()->redirectToLogin($this->page);
+        //PracticalPlants_SSO_Auth::getInstance()->redirectToLogin($this->page);
+        global $wgServer;
+        
+        header('Location: '.$wgServer.'/wiki/Special:UserLogin');
+        exit;
     }   
 }
